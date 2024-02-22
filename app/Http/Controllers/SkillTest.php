@@ -30,17 +30,33 @@ class SkillTest extends Controller
 
         //  Jawaban no 02
         $numbers = [9, 3, 7, 8, 2, 6, 1, 4, 10, 2, 2, 3];
-        sort($numbers);
+        $numberResult = $this->bubbleSort($numbers);
 
-        $arrLength = count($numbers);
-        for ($x = 0; $x < $arrLength; $x++) {
-            echo $numbers[$x];
+        foreach ($numberResult as $item) {
+            echo $item;
             echo "<br>";
         }
         echo "--------------------------------------------------------------------------------";
         echo "<br>";
 
         return view('skill-test/views');
+    }
+
+    public function bubbleSort($arr)
+    {
+        $n = count($arr);
+        for ($i = 0; $i < $n - 1; $i++) {
+            for ($j = 0; $j < $n - $i - 1; $j++) {
+                // Jika elemen ke-j lebih besar dari elemen ke-(j+1), tukar posisinya
+                if ($arr[$j] > $arr[$j + 1]) {
+                    $temp = $arr[$j];
+                    $arr[$j] = $arr[$j + 1];
+                    $arr[$j + 1] = $temp;
+                }
+            }
+        }
+
+        return $arr;
     }
 
     public function hitungBelanjaan(Request $input)
