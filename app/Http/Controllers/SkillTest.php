@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-class SkillTest extends BaseController
+use Illuminate\Http\Request;
+
+class SkillTest extends Controller
 {
     public function index()
     {
@@ -39,7 +41,7 @@ class SkillTest extends BaseController
         return view('skill-test/views');
     }
 
-    public function hitungBelanjaan($input)
+    public function hitungBelanjaan(Request $input)
     {
         $jenisBarang = $input->post('jenis_barang');
         $jumlahBarang = $input->post('jumlah_barang');
