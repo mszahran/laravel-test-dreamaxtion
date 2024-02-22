@@ -37,6 +37,8 @@ class SkillTest extends Controller
             echo $numbers[$x];
             echo "<br>";
         }
+        echo "--------------------------------------------------------------------------------";
+        echo "<br>";
 
         return view('skill-test/views');
     }
