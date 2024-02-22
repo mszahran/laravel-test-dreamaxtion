@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', App\Http\Controllers\SkillTest::class, 'index');
-Route::posrt('/hitung', App\Http\Controllers\SkillTest::class, 'hitungBelanjaan');
+Route::post('/hitung', App\Http\Controllers\SkillTest::class, 'hitungBelanjaan');
